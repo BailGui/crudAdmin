@@ -19,5 +19,8 @@ if(isset($_SESSION[''])){
 
 }else{
 
-    require_once ".../controller/publicControl.php"
+    require_once "../controller/publicControl.php"
+
 }
+
+$db = null;
