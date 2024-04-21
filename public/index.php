@@ -16,11 +16,10 @@ try{
 if(isset($_SESSION[''])){
 
     require_once "../controller/adminControl.php"
-
+    
 }else{
 
     require_once "../controller/publicControl.php"
-
 }
 
 $db = null;
