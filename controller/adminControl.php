@@ -12,4 +12,10 @@ if(isset($_GET['connect'])){
             die();
         }
     }
+
+include "../view/public/connect.view.html.php";
+die();
+
 }
+
+include "../view/public/homepage.view.html.php"
