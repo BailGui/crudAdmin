@@ -2,7 +2,7 @@
 
 function connectAdministrator(PDO $co, string $user, string $password) : bool|string 
 {
-    $sql="SELECT * FROM `` WHERE `` = ?";
+    $sql="SELECT * FROM `administrator` WHERE `username` = ?";
 
     $prepare = $co->prepare($sql);
 
@@ -11,10 +11,10 @@ function connectAdministrator(PDO $co, string $user, string $password) : bool|st
         if($prepare->rowCount()===0) return false;
         $result = $prepare->fetch();
 
-        if(password_verify($password, $result[''])){
+        if(password_verify($password, $result['passwd'])){
 
             $_SESSION = $result;
-            unset($_SESSION['']);
+            unset($_SESSION['passwd']);
             return true;
         }
     }
@@ -22,4 +22,9 @@ function connectAdministrator(PDO $co, string $user, string $password) : bool|st
 catch(Exception $e){
     return $e->getMessage()
 }
+}
+
+function disconnectAdministrator(): bool
+{
+    
 }
