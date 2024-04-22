@@ -28,4 +28,41 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
 
 }
 
+if(isset($_GET['insert'])){
+
+    if(isset(
+        $_POST['title'],
+        $_POST['ourdesc'],
+        $_POST['latitude'],
+        $_POST['longitude']
+    )){
+
+        $title = strip_tags(trim($_POST['title']));
+        $oudesc = trim($_POST['ourdesc']);
+        $latitude = (float) $_POST['latitude'];
+        $longitude = (float) $_POST['longitude'];
+
+        $insert = addOurdatas($connect,$title,$oudesc,$latitude,$longitude);
+
+        if($insert===true):
+            header("Location: ./?zut"); 
+            exit();
+        else:
+            $error = $insert;
+        endif;
+    }
+
+    require "../view/private/admin.insert.html.php";
+
+    die();
+}
+
+$ourDatas = getAllOurdatas($connect);
+
+if(is_string($ourDatas)) $message = $ourDatas;
+
+elseif(isset($ourDatas['error'])) $error = $ourDatas['error'];
+
+require "../view/private/admin.homepage.html.php";
+
 
