@@ -1,21 +1,8 @@
 <?php
 
-if(isset($_GET['connect'])){
+if(isset($_GET['disconnect'])) administratorDisconnect();
 
-    if(isset($_POST[''],$_POST[''])){
-        $username = htmlspecialchars(strip_tags(trim($_POST[''])),ENT_QUOTES);
-        $userpwd = trim($_POST['']);
-        $connect = connectAdministrator($db,$username,$userpwd);
+if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
 
-        if($connect===true){
-            header("Location: ./");
-            die();
-        }
-    }
+    $id = (int) $_GET['update'];
 
-include "../view/public/connect.view.html.php";
-die();
-
-}
-
-include "../view/public/homepage.view.html.php"
