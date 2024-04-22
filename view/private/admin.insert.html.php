@@ -7,6 +7,13 @@
 </head>
 <body>
     <h1>Admin Insertion</h1>
+    <nav>
+        <ul>
+            <li><a href="./">Accueil Admin</a></li>
+            <li><a href="?insert">Ajouter une data</a></li>
+            <li><a href="?disconnect">Déconnexion</a>       
+        </ul>
+    </nav>
     
 </body>
 </html>
