@@ -35,4 +35,9 @@ function disconnectAdministrator(): bool
             $params["secure"], $params["httponly"]
         );
     }
+
+    session_destroy();
+
+    header("Location: ./");
+    exit();
 }
