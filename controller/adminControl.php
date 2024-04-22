@@ -20,3 +20,12 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
         $logintude = (float) $_POST['longitude'];
 
     }
+
+    $update = getOneOurdatasByID($connect,$id);
+    var_dump($update,$_POST);
+
+    require "../view/private/admin.update.html.php";
+
+}
+
+
