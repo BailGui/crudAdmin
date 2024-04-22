@@ -14,6 +14,18 @@
             <li><a href="?disconnect">Déconnexion</a>       
         </ul>
     </nav>
-    
+    <div class="content">
+        <h2>Insertion d'une data</h2>
+        <?php if(isset($error)): ?>
+                <h3 class="error"><?=$error?></h3>
+        <?php endif ?>
+       <form action="" name="ourdatas" method="POST">
+        <input type="text" name="title" placeholder="title" required><br>
+        <textarea name="ourdesc" placeholder="Descrition" required></textarea><br>
+        <input type="number" step="0.0000001" name="latitude" placeholder="latitude" required><br>
+        <input type="number" step="0.0000001" name="longitude" placeholder="longitude" required><br>
+        <input type="submit" value="Insérer" />
+       </form>
+    </div>
 </body>
 </html>

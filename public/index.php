@@ -13,10 +13,10 @@ try{
     die($e->getMessage());
 }
 
-if(isset($_SESSION[''])){
+if(isset($_SESSION['login'])){
 
     require_once "../controller/adminControl.php"
-    
+
 }else{
 
     require_once "../controller/publicControl.php"
