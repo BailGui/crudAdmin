@@ -33,7 +33,22 @@ function getOneOurdatasByID(PDO $co, int $id): array|string
     }
 }
 
-function updateOurdatasByID(PDO $db, int $idourdatas, string $titre, string $description, float $latitude, float $longitude): bool|string
+function updateOurdatasByID(PDO $db, int $idourdatas, string $titre, string $description, float $latitude, float $longitude) : bool|string
 {
 return false;
 }
+
+function addOurdatas(PDO $db, string $titre, string $description, float $latitude,float $longitude) : bool|string
+{
+    $sql = "INSERT INTO `ourdatas` (`title`, `ourdesc`, `latitude`,`longitude`) 
+            VALUES(?,?,?,?);";
+    
+    $prepare = $db->prepare($sql);
+
+    try{
+        $prepare->execute([$titre, $description, $latitude, $longitude]);
+        $prepare->closeCursor();
+        return true;
+    }catch(Exception $e){
+        return $e->getMessage();
+    }
