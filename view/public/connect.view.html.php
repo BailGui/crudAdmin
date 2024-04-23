@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <h1>Connexion</h1>
+    <nav>
+        <ul>
+            <li><a href="./">Accueil</a></li>
+            <li><a href="?connect">Connexion</a></li>
+        </ul>
+    </nav>
+    <form action="" method="POST" name="connexion">
+        
+    </form>
     
 </body>
 </html>
