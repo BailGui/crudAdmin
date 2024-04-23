@@ -29,6 +29,30 @@
 
         <?php else: ?>
 
+            <table>
+            <tr>
+                <th>idourdatas</th>
+                <th>title</th>
+                <th>ourdesc</th>
+                <th>latitude</th>
+                <th>longitude</th>
+                <th>Modifier</th>
+                <th>supprimer</th>
+            </tr>
+                <?php foreach($ourDatas as $item): ?>
+                    <tr>
+                <td><?=$item['idourdatas']?></td>
+                <td><?=$item['title']?></td>
+                <td><?=$item['ourdesc']?></td>
+                <td><?=$item['latitude']?></td>
+                <td><?=$item['longitude']?></td>
+                <td><a href="?update=<?=$item['idourdatas']?>"><img src="img/update.png" width="32" height="32" alt="update" /></a></td>
+                <td><img src="img/delete.png" width="32" height="32" alt="delete" /></td>
+            </tr>
+                <?php endforeach; ?>
+            </table>
+        <?php endif; ?>
+
     </div>
 </body>
 </html>
