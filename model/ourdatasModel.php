@@ -16,3 +16,19 @@ function getAllOurdatas(PDO $db, $order = "DESC"): array|string {
     }
     
 }
+
+function getOneOurdatasByID(PDO $co, int $id): array|string 
+{
+    $sql = "SELECT * FROM `ourdatas` WHERE `idourdatas` = ?";
+    $prepare = $co->prepare($sql);
+
+    try{
+       $prepare->execute([$id]);
+       if($prepare->rowCount()===0) return "Impossible de modifier cet article";
+       $result = $prepare->fetch();
+       $prepare->closeCursor();
+       return $result;
+    } catch (Exception $e) {
+        return $e->getMessage();
+    }
+}
