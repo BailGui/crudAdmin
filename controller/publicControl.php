@@ -1,8 +1,18 @@
 <?php
 
+if(isset($_GET['json'])){
+    $datas = getAllGeoloc($db);
+    if(!is_string($datas)){
+        echo json_encode($datas);
+    }
+    die();
+}
+
+
+
 if(isset($_GET['connect'])){
 
-    if(isset($_POST[''],$_POST[''])){
+    if(isset($_POST['username'],$_POST['passwd'])){
         $username = htmlspecialchars(strip_tags(trim($_POST[''])),ENT_QUOTES);
         $userpwd = trim($_POST['']);
         $connect = connectAdministrator($db,$username,$userpwd);
