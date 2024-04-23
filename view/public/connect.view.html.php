@@ -15,7 +15,9 @@
         </ul>
     </nav>
     <form action="" method="POST" name="connexion">
-        
+    <input type="text" name="username" placeholder="Votre login" required><br>
+        <input type="password" name="passwd" placeholder="Votre mot de passe" required><br>
+        <input type="submit" value="connexion">
     </form>
     
 </body>
