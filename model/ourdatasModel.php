@@ -52,3 +52,5 @@ function addOurdatas(PDO $db, string $titre, string $description, float $latitud
     }catch(Exception $e){
         return $e->getMessage();
     }
+
+}
