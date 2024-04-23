@@ -32,3 +32,8 @@ function getOneOurdatasByID(PDO $co, int $id): array|string
         return $e->getMessage();
     }
 }
+
+function updateOurdatasByID(PDO $db, int $idourdatas, string $titre, string $description, float $latitude, float $longitude): bool|string
+{
+return false;
+}
