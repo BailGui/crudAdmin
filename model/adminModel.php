@@ -24,7 +24,7 @@ catch(Exception $e){
 }
 }
 
-function disconnectAdministrator(): bool
+function disconnectAdministrator(): void
 {
     $_SESSION = [];
 
@@ -39,5 +39,5 @@ function disconnectAdministrator(): bool
     session_destroy();
 
     header("Location: ./");
-    exit();
+    die();
 }
