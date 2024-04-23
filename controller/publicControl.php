@@ -1,15 +1,5 @@
 <?php
 
-if(isset($_GET['json'])){
-    $datas = getAllGeoloc($db);
-    if(!is_string($datas)){
-        echo json_encode($datas);
-    }
-    die();
-}
-
-
-
 if(isset($_GET['connect'])){
 
     if(isset($_POST['username'],$_POST['passwd'])){

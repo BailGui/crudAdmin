@@ -45,8 +45,8 @@ if(isset($_GET['insert'])){
         $insert = addOurdatas($connect,$title,$oudesc,$latitude,$longitude);
 
         if($insert===true):
-            header("Location: ./?zut"); 
-            exit();
+            header("Location: ./?404"); 
+            die();
         else:
             $error = $insert;
         endif;
