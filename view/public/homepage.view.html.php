@@ -7,6 +7,45 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+<h1>Homepage</h1>
+    <nav>
+        <ul>
+            <li><a href="./">Accueil</a></li>
+            <li><a href="?connect">Connexion</a>
+        </ul>
+    </nav>
+    <div class="content">
+
+<?php if(isset($message)): ?>
+               <h3><?=$message?></h3>
+        <?php elseif(isset($error)): ?>
+               <h3 class="error"><?=$error?></h3>
+
+        <?php else: ?>
+
+            <table>
+            <tr>
+                <th>idourdatas</th>
+                <th>title</th>
+                <th>ourdesc</th>
+                <th>latitude</th>
+                <th>longitude</th>
+                <th>Modifier</th>
+                <th>supprimer</th>
+            </tr>
+                <?php foreach($ourDatas as $item): ?>
+                    <tr>
+                <td><?=$item['idourdatas']?></td>
+                <td><?=$item['title']?></td>
+                <td><?=$item['ourdesc']?></td>
+                <td><?=$item['latitude']?></td>
+                <td><?=$item['longitude']?></td>
+                <td><a href="?update=<?=$item['idourdatas']?>"><img src="img/update.png" width="32" height="32" alt="update" /></a></td>
+                <td><img src="img/delete.png" width="32" height="32" alt="delete" /></td>
+            </tr>
+                <?php endforeach; ?>
+            </table>
+        <?php endif; ?>
+    </div>
 </body>
 </html>
