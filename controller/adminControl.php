@@ -21,7 +21,7 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
 
     }
 
-    $update = getOneOurdatasByID($connect,$id);
+    $update = getOneOurdatasByID($db,$id);
     var_dump($update,$_POST);
 
     require "../view/private/admin.update.html.php";
@@ -42,7 +42,7 @@ if(isset($_GET['insert'])){
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
 
-        $insert = addOurdatas($connect,$title,$oudesc,$latitude,$longitude);
+        $insert = addOurdatas($db,$title,$oudesc,$latitude,$longitude);
 
         if($insert===true):
             header("Location: ./?404"); 
@@ -57,7 +57,7 @@ if(isset($_GET['insert'])){
     die();
 }
 
-$ourDatas = getAllOurdatas($connect);
+$ourDatas = getAllOurdatas($db);
 
 if(is_string($ourDatas)) $message = $ourDatas;
 

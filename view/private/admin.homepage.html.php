@@ -16,7 +16,7 @@
     </nav>
     <div class="content">
         <h2>Admin de nos datas</h2>
-        <?php if(isset($_GET['zut'])): ?>
+        <?php if(isset($_GET['404'])): ?>
 
             <h2>Insertion réussie</h2>
 

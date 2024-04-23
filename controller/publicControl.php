@@ -3,29 +3,29 @@
 if(isset($_GET['connect'])){
 
     if(isset($_POST['username'],$_POST['passwd'])){
-        $username = htmlspecialchars(strip_tags(trim($_POST['username'])),ENT_QUOTES);
-        $userpwd = trim($_POST['passwd']);
-        $connect = connectAdministrator($db,$username,$passwd);
+        $connection = connectAdministrator($db,$_POST['username'],$_POST['passwd']);
 
-        if($connect===true){
+
+        if($connection === true){
             header("Location: ./");
             die();
         }
+
     }
 
-include "../view/public/connect.view.html.php";
+require "../view/public/connect.view.html.php";
 die();
 
 }
 
 if(isset($_GET['json'])){
-    $ouDatas = getAllOurdatas($connect,"ASC");
+    $ouDatas = getAllOurdatas($db,"ASC");
     echo json_encode($ourDatas);
     die(); 
 }
 
-$ourDatas = getAllOurdatas($connect);
+$ourDatas = getAllOurdatas($db);
 if(is_string($ourDatas)) $message = $ourDatas;
 elseif(isset($ourDatas['error'])) $error = $ourDatas['error'];
 
-include "../view/public/homepage.view.html.php"
+include "../view/public/homepage.view.html.php";

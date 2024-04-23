@@ -17,10 +17,10 @@ function getAllOurdatas(PDO $db, $order = "DESC"): array|string {
     
 }
 
-function getOneOurdatasByID(PDO $co, int $id): array|string 
+function getOneOurdatasByID(PDO $db, int $id): array|string 
 {
     $sql = "SELECT * FROM `ourdatas` WHERE `idourdatas` = ?";
-    $prepare = $co->prepare($sql);
+    $prepare = $db->prepare($sql);
 
     try{
        $prepare->execute([$id]);
