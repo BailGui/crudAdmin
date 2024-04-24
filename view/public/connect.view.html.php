@@ -25,7 +25,6 @@
             <input type="password" name="userpwd" placeholder="Votre mot de passe" required><br>
             <input type="submit" value="connexion">
         </form>
-        <?php // var_dump($_POST)?>
     </div>
 </body>
 </html>
