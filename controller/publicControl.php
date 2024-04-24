@@ -17,7 +17,7 @@ if(isset($_GET['connect'])){
         $connection = connectAdministrator($db,$username,$userpwd);
 
         if($connection === true){
-            header("Location: ./");
+            header("Location: ?bienvenue");
             die();
         }else{
             $error = "Login et/ou mot de passe incorrecte(s)";
