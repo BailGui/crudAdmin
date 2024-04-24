@@ -1,9 +1,7 @@
 <?php
 
 if(isset($_GET['disconnect']))
-
-     disconnectAdministrator();         // Il faut que le nom de fonction est bien
-     header("Location: ./");
+include ("../model/logoutModel.php");
      die();
 
 if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
