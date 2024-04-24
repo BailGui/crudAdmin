@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>Homepage</h1>
+<h1>Accueil</h1>
     <nav>
         <ul>
             <li><a href="./">Accueil</a></li>
@@ -15,38 +15,37 @@
             <li><a href="?connect">Connexion</a>
         </ul>
     </nav>
-    <div class="content">
+    <div id="content">
+        <h3>Liste de nos lieux</h3>
+        <?php
+        
+        if(is_string($ourDatas)):
+        ?>
+            <h3 id="alert"><?=$ourDatas?></h3>
+        <?php
+        
+        elseif(empty($ourDatas)):
+        ?>
+            <h3 id="comment">Pas encore de lieu.</h3>
+        <?php
+        
+        else:
 
-<?php if(isset($message)): ?>
-               <h3><?=$message?></h3>
-        <?php elseif(isset($error)): ?>
-               <h3 class="error"><?=$error?></h3>
+            $nb = count($ourDatas);
+        ?>
+            <h3>Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>
 
-        <?php else: ?>
-
-            <table>
-            <tr>
-                <th>idourdatas</th>
-                <th>title</th>
-                <th>ourdesc</th>
-                <th>latitude</th>
-                <th>longitude</th>
-                <th>Modifier</th>
-                <th>supprimer</th>
-            </tr>
-                <?php foreach($ourDatas as $item): ?>
-                    <tr>
-                <td><?=$item['idourdatas']?></td>
-                <td><?=$item['title']?></td>
-                <td><?=$item['ourdesc']?></td>
-                <td><?=$item['latitude']?></td>
-                <td><?=$item['longitude']?></td>
-                <td><a href="?update=<?=$item['idourdatas']?>"><img src="img/update.png" width="32" height="32" alt="update" /></a></td>
-                <td><img src="img/delete.png" width="32" height="32" alt="delete" /></td>
-            </tr>
-                <?php endforeach; ?>
-            </table>
-        <?php endif; ?>
+            <?php
+            foreach($ourDatas as $data):
+            ?>
+            <h4><?=$data['title']?></h4>
+            <p><?=$data['ourdesc']?></p>
+            <p><?=$data['latitude']?> | <?=$data['longitude']?></p>
+            <hr>
+        <?php
+            endforeach;
+        endif;
+        ?>   
     </div>
 </body>
 </html>

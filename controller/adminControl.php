@@ -89,9 +89,6 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
 
     $getOneGeoloc = getOneGeolocByID($db, $idDelete);
 
-    include "../view/admin/admin.delete.view.html.php";
-    exit();
-}
 
 
 

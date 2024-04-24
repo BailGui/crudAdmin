@@ -11,14 +11,21 @@
     <nav>
         <ul>
             <li><a href="./">Accueil</a></li>
-            <li><a href="?connect">Connexion</a></li>
+            <li><a href="?json" target="_blank">API</a> format JSON</li>
+            <li>Connexion</li>
         </ul>
     </nav>
-    <form action="" method="POST" name="connexion">
-    <input type="text" name="username" placeholder="Votre login" required><br>
-        <input type="password" name="passwd" placeholder="Votre mot de passe" required><br>
-        <input type="submit" value="connexion">
-    </form>
-    
+    <div id="content">
+        <h3>Connexion à notre administration</h3>
+        <?php if(isset($error)): ?>
+            <h4 id="alert"><?=$error?></h4>
+        <?php endif ?>    
+        <form action="" method="POST" name="connexion">
+            <input type="text" name="username" placeholder="Votre login" required><br>
+            <input type="password" name="userpwd" placeholder="Votre mot de passe" required><br>
+            <input type="submit" value="connexion">
+        </form>
+        <?php // var_dump($_POST)?>
+    </div>
 </body>
 </html>
