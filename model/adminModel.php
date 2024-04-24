@@ -1,5 +1,7 @@
 <?php
 
+
+
 function connectAdministrator(PDO $db, string $user, string $password) : bool|string 
 {
     $sql="SELECT * FROM `administrator` WHERE `username` = ?";
@@ -14,7 +16,7 @@ function connectAdministrator(PDO $db, string $user, string $password) : bool|st
         if(password_verify($password, $result['passwd'])){
 
             $_SESSION['idadministrator'] = $result['idadministrator'];
-            $_SESSION['login'] = $login;
+            $_SESSION['login'] = $user; // $login n'existe pas ici
             return true;
         }else{
             return false;
