@@ -18,6 +18,7 @@
     <div id="content">
         <h3>Liste de nos lieux</h3>
         <?php
+
         
         if(is_string($ourDatas)):
         ?>
@@ -30,7 +31,7 @@
         <?php
         
         else:
-
+var_dump($ourDatas);
             $nb = count($ourDatas);
         ?>
             <h3>Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>
@@ -39,7 +40,7 @@
             foreach($ourDatas as $data):
             ?>
             <h4><?=$data['title']?></h4>
-            <p><?=$data['ourdesc']?></p>
+            <p><?=$data['ourdesc']?></p> 
             <p><?=$data['latitude']?> | <?=$data['longitude']?></p>
             <hr>
         <?php

@@ -14,6 +14,9 @@ try{
     die($e->getMessage());
 }
 
+if (isset($_GET["bienvenue"])) {
+    include ("../view/public/welcome.view.html.php");
+}
 if(isset($_SESSION['login'])){
 
     require_once "../controller/adminControl.php";
