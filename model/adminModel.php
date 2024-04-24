@@ -13,15 +13,17 @@ function connectAdministrator(PDO $db, string $user, string $password) : bool|st
 
         if(password_verify($password, $result['passwd'])){
 
-            $_SESSION['idadministrator'] = $result['idadministrator'];
-            $_SESSION['login'] = $result["username"];
+            $_SESSION = $result;
+            
+            unset($_SESSION['passwd']);
+            
             return true;
-        }else{
-            return false;
         }
+       
+        return false;
 
     }catch(Exception $e){
-    return $e->getMessage();
+        return $e->getMessage();
 }
 }
 
