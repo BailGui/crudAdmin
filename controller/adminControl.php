@@ -1,32 +1,47 @@
 <?php
 
-if(isset($_GET['disconnect'])) administratorDisconnect();
+if(isset($_GET['disconnect']))
+
+     administratorDisconnect();
+     header("Location: ./");
+     die();
 
 if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
 
-    $id = (int) $_GET['update'];
+    $idUpdate = (int) $_GET['update'];
 
     if(isset(
-        $_POST['idourdatas'],
         $_POST['title'],
         $_POST['ourdesc'],
         $_POST['latitude'],
         $_POST['longitude']
     )){
-        $idourdatas = (int) $_POST['idourdatas'];
+        $idgeoloc = $idUpdate;
         $title = htmlspecialchars(strip_tags(trim($_POST['title'])),ENT_QUOTES);
         $description = htmlspecialchars(trim($_POST['ourdesc']),ENT_QUOTES);
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
 
-    }
+        $insert = addOurdatas($db,$idgeoloc,$title,$description,$latitude, $longitude);
 
-    $update = getOneOurdatasByID($db,$id);
-    var_dump($update,$_POST);
-
-    require "../view/private/admin.update.html.php";
-
+        if($update===true){
+            header("Location: ./");
+            exit();
+        }elseif($update===false){
+            $errorUpdate = "Cet article n'a pas été modifié";
+        }else{
+            $errorUpdate = $update;
+        }
 }
+
+$updateDatas =  updateOurdatasByID( $titre,$description,$latitude,$longitude,$idourdatas);
+
+include "../view/private/admin.insert.html.php";
+
+die();
+}
+
+
 
 if(isset($_GET['insert'])){
 
@@ -42,27 +57,46 @@ if(isset($_GET['insert'])){
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
 
-        $insert = addOurdatas($db,$title,$description,$latitude,$longitude);
+        $insert = updateOurdatasByID($db,$title,$description,$latitude,$longitude);
 
-        if($insert===true){
-            header("Location: ./"); 
-            die();
-    }
+        if($insert === true){
+            header("Location: ./");
+            exit();
+           }
+    
+        }
 
-    require "../view/private/admin.insert.html.php";
+
+    include "../view/private/admin.insert.html.php";
 
     die();
 }
 
+if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
+
+    $idDelete = (int) $_GET['delete'];
+    if(isset($_GET['ok'])){
+        $delete = deleteOneDatasByID($db, $idDelete);
+        if($delete===true){
+            header("Location: ./");
+            exit();
+        }elseif($delete===false){
+            $error = "Problème avec cette suppression";
+        }else{
+            $error = $delete;
+        }
+    }
+
+    $getOneGeoloc = getOneGeolocByID($db, $idDelete);
+
+    include "../view/admin/admin.delete.view.html.php";
+    exit();
 }
+
+
 
 $ourDatas = getAllOurdatas($db);
 
-$updateDatas =  updateOurdatasByID( $titre,$description,$latitude,$longitude,$idourdatas);
-
-if(is_string($ourDatas)) $message = $ourDatas;
-
-elseif(isset($ourDatas['error'])) $error = $ourDatas['error'];
 
 require "../view/private/admin.homepage.html.php";
 

@@ -35,7 +35,7 @@ function getOneOurdatasByID(PDO $db, int $id): array|string
 
 function updateOurdatasByID(PDO $db, int $idourdatas, string $titre, string $description, float $latitude, float $longitude) : bool|string
 {
-  $sql = "UPDATE `ourdatas` SET `title` = ?, `ourdesc` = ?, `latitude` = ?, `longitude` = ? WHERE `idgeoloc` = ?";
+  $sql = "UPDATE `ourdatas` SET `title` = ?, `ourdesc` = ?, `latitude` = ?, `longitude` = ? WHERE `idourdatas` = ?";
   $prepare = $db->prepare($sql);
   try{
     $prepare->execute([
@@ -66,6 +66,22 @@ function addOurdatas(PDO $db, string $titre, string $description, float $latitud
     try{
         $prepare->execute([$titre, $description, $latitude, $longitude]);
         $prepare->closeCursor();
+        return true;
+    }catch(Exception $e){
+        return $e->getMessage();
+    }
+
+}
+
+function deleteOneDataByID(PDO $db, int $id): bool|string
+{
+    $sql = "DELETE FROM `ourdatas` WHERE `idourdatas`= :id ";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue("id", $id, PDO::PARAM_INT);
+
+    try{
+        $stmt->execute();
+        if($stmt->rowCount()===0) return false;
         return true;
     }catch(Exception $e){
         return $e->getMessage();

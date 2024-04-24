@@ -1,4 +1,11 @@
 <?php
+if(isset($_GET['json'])){
+    $datas = getAllOurdatas($db);
+    if(!is_string($datas)){
+        echo json_encode($datas);
+    }
+    exit();
+}
 
 if(isset($_GET['connect'])){
 
