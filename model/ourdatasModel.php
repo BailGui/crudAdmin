@@ -1,8 +1,8 @@
 <?php
 
-function getAllOurdatas(PDO $db, $order = "DESC"): array|string {
+function getAllOurdatas(PDO $db, $order = "DESC"): array|string {       // pourquoi ici...c'est connect admin donc mettre dans adminModel
 
-    $order = (in_array($order,['DESC','ASC'], true))? $order: "DESC";
+    $order = (in_array($order,['DESC','ASC'], true))? $order: "DESC";   // qu'est-ce que tu veux faire ici....il n'y a pas enore de triages
     $sql = "SELECT * FROM ourdatas ORDER BY idourdatas $order;";
     try{
         $query = $db->query($sql);
