@@ -2,8 +2,9 @@
 
 if(isset($_GET['disconnect']))
 
-     administratorDisconnect();
+     disconnectAdministrator();
      header("Location: ./");
+include("../model/adminModel.php")
      die();
 
 if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
@@ -34,7 +35,7 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
         }
 }
 
-$updateDatas =  updateOurdatasByID( $titre,$description,$latitude,$longitude,$idourdatas);
+$updateDatas =  updateOurdatasByID($db,$titre,$description,$latitude,$longitude,$idourdatas);
 
 include "../view/private/admin.insert.html.php";
 
@@ -47,17 +48,19 @@ if(isset($_GET['insert'])){
 
     if(isset(
         $_POST['title'],
+        $_POST['idourdatas'],
         $_POST['ourdesc'],
         $_POST['latitude'],
         $_POST['longitude']
     )){
 
         $title = htmlspecialchars(strip_tags(trim($_POST['title'])),ENT_QUOTES);
+        $ourDatas = htmlspecialchars(strip_tags(trim($_POST['idourdatas'])),ENT_QUOTES);
         $description = htmlspecialchars(trim($_POST['ourdesc']),ENT_QUOTES);
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
 
-        $insert = updateOurdatasByID($db,$title,$description,$latitude,$longitude);
+        $insert = updateOurDatasByID($db,$ourDatas,$title,$description,$latitude,$longitude);
 
         if($insert === true){
             header("Location: ./");
@@ -87,7 +90,7 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
         }
     }
 
-    $getOneGeoloc = getOneGeolocByID($db, $idDelete);
+    $getOneData = getOneDatasByID($db, $idDelete);
 
 
 

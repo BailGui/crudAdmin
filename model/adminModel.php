@@ -8,13 +8,13 @@ function connectAdministrator(PDO $db, string $user, string $password) : bool|st
 
     try{
         $prepare->execute([$user]);
-        if($prepare->rowCount()===0) return "Utilisateur inconnu";
+        if($prepare->rowCount()===0) return false;
         $result = $prepare->fetch();
 
         if(password_verify($password, $result['passwd'])){
 
             $_SESSION['idadministrator'] = $result['idadministrator'];
-            $_SESSION['login'] = $login;
+            $_SESSION['login'] = $result["username"];
             return true;
         }else{
             return false;
@@ -25,7 +25,7 @@ function connectAdministrator(PDO $db, string $user, string $password) : bool|st
 }
 }
 
-function disconnectAdministrator(): void
+function disconnectAdministrator(): bool
 {
     $_SESSION = [];
 
