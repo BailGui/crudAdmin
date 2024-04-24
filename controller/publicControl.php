@@ -19,7 +19,7 @@ die();
 }
 
 if(isset($_GET['json'])){
-    $ouDatas = getAllOurdatas($db,"ASC");
+    $ourDatas = getAllOurdatas($db,"ASC");
     echo json_encode($ourDatas);
     die(); 
 }

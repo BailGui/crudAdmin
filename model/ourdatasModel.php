@@ -35,7 +35,25 @@ function getOneOurdatasByID(PDO $db, int $id): array|string
 
 function updateOurdatasByID(PDO $db, int $idourdatas, string $titre, string $description, float $latitude, float $longitude) : bool|string
 {
-return false;
+  $sql = "UPDATE `ourdatas` SET `title` = ?, `ourdesc` = ?, `latitude` = ?, `longitude` = ? WHERE `idgeoloc` = ?";
+  $prepare = $db->prepare($sql);
+  try{
+    $prepare->execute([
+        $titre,
+        $description,
+        $latitude,
+        $longitude,
+        $idourdatas
+    ]);
+
+    if($prepare->rowCount()===0) return false;
+
+    return true;
+
+  }catch(Exception $e){
+     return $e->getMessage();
+
+}
 }
 
 function addOurdatas(PDO $db, string $titre, string $description, float $latitude,float $longitude) : bool|string
