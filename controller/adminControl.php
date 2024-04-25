@@ -65,7 +65,7 @@ if(isset($_GET['insert'])){
         $insert = addNewDatas($db,$title,$description,$latitude,$longitude);
 
         if($insert === true){
-            header("Location: ./");
+            header("Location: ?insert");
             exit();
            }
     
@@ -78,12 +78,12 @@ if(isset($_GET['insert'])){
 }
 
 if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
-
     $idDelete = (int) $_GET['delete'];
-    if(isset($_GET['ok'])){
+    
+
         $delete = deleteOneDataByID($db, $idDelete);
         if($delete===true){
-            header("Location: ./");
+            header("Location: ?bienvenue");
             exit();
         }elseif($delete===false){
             $error = "Problème avec cette suppression";
@@ -92,7 +92,5 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
         }
     }
 
-    $getOneData = getOneOurDatasByID($db, $idDelete);
 
 
-}
