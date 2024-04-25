@@ -30,7 +30,7 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
         $insert = addOurdatas($db,$idgeoloc,$title,$description,$latitude,$longitude);
 
         if($update===true){
-            header("Location: ./");
+            header("Location: ?update");
             exit();
         }elseif($update===false){
             $errorUpdate = "Cet article n'a pas été modifié";
