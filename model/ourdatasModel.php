@@ -2,7 +2,7 @@
 
 function getAllOurdatas(PDO $db, $order = "DESC"): array|string {
 
-    $order = (in_array($order,['DESC','ASC'], true))? $order: "DESC";
+    //$order = (in_array($order,['DESC','ASC'], true))? $order: "DESC";
     $sql = "SELECT * FROM ourdatas ORDER BY idourdatas $order;";
     try{
         $query = $db->query($sql);

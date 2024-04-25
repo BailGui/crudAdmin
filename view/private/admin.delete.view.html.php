@@ -1,3 +1,12 @@
+<?php
+if(!isset($_SESSION['monID']) || 
+$_SESSION['monID']!== session_id())
+{
+header("location: ?connect");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +33,8 @@
             <h3 id="alert"><?=$error?></h3>
         <?php
         endif;
-        // datas est une chaîne de caractère : erreur SQL !
-        if(is_string($getOneGeoloc)):
+        
+        if(is_string($getOneData)):
         ?>
             <h3 id="alert"><?=$getOneData?></h3>
         <?php
