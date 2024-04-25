@@ -53,19 +53,16 @@ if(isset($_GET['insert'])){
 
     if(isset(
         $_POST['title'],
-        $_POST['idourdatas'],
         $_POST['ourdesc'],
         $_POST['latitude'],
         $_POST['longitude']
     )){
 
         $title = htmlspecialchars(strip_tags(trim($_POST['title'])),ENT_QUOTES);
-        $ourDatas = htmlspecialchars(strip_tags(trim($_POST['idourdatas'])),ENT_QUOTES);
         $description = htmlspecialchars(trim($_POST['ourdesc']),ENT_QUOTES);
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
-
-        $insert = updateOurDatasByID($db,$ourDatas,$title,$description,$latitude,$longitude);
+        $insert = addNewDatas($db,$title,$description,$latitude,$longitude);
 
         if($insert === true){
             header("Location: ./");

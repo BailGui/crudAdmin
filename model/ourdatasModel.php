@@ -88,3 +88,19 @@ function deleteOneDataByID(PDO $db, int $id): bool|string
     }
 
 }
+
+function addNewDatas (PDO $db, $title, $desc, $lat, $long) {
+    $sql = "INSERT INTO `ourdatas`(`title`, `ourdesc`, `latitude`, `longitude`) VALUES (?,?,?,?)";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(1,$title);
+    $stmt->bindValue(2,$desc);
+    $stmt->bindValue(3,$lat);
+    $stmt->bindValue(4,$long);
+
+    try {
+        $stmt->execute();
+        return true;
+    }catch(Exception $e) {
+        return $e->getMessage();
+    }
+}
