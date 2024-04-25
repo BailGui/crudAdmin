@@ -12,7 +12,6 @@ if(isset($_GET['disconnect'])){
 
 if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
     $idUpdate = (int) $_GET['update'];
-    $updateDatas =  getOneOurdatasByID($db, $idUpdate);
 
     if(isset(
         $_POST['title'],
@@ -20,13 +19,13 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
         $_POST['latitude'],
         $_POST['longitude']
     )){
-        $idgeoloc = $idUpdate;
+        $idourdatas = $idUpdate;
         $title = htmlspecialchars(strip_tags(trim($_POST['title'])),ENT_QUOTES);
         $description = htmlspecialchars(trim($_POST['ourdesc']),ENT_QUOTES);
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
 
-        $update = updateOurdatasByID($db,$idgeoloc,$title,$description,$latitude,$longitude);
+        $update = updateOurdatasByID($db,$idourdatas,$title,$description,$latitude,$longitude);
 
         if($update===true){
             header("Location: ?update");
@@ -39,7 +38,7 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
 
 }
 
-
+$updateDatas =  getOneOurdatasByID($db, $idUpdate);
 
 include "../view/private/admin.update.html.php";
 

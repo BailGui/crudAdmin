@@ -24,16 +24,16 @@ header("location: ?connect");
         </ul>
     </nav>
     <div class="content">
-        <h2>Modification d'un data</h2>
+        <h2>Modification d'une data</h2>
         <?php if(isset($error)): ?>
             <h3 class="error"><?=$error?></h3>
         <?php endif?>
         <form action="" name="ourdatas" method="POST">
-            <input type="text" name="title" placeholder="title" value="<?=$update['title']?>" required><br>
-            <textarea name="ourdesc" placeholder="Description" required><?=$update['ourdesc']?></textarea><br>
-            <input type="number" step="0.0000001" name="latitude" placeholder="latitude" value="<?=$update['latitude']?>" required><br>
-            <input type="number" step="0.0000001" name="longitude" placeholder="longitude" value="<?=$update['longitude']?>" required><br>
-            <input type="hidden" name="idourdatas" value="<?=$update['idourdatas']?>">
+            <input type="text" name="title" placeholder="title" value="<?=$updateDatas['title']?>" required><br>
+            <textarea name="ourdesc" placeholder="Description" required><?=$updateDatas['ourdesc']?></textarea><br>
+            <input type="number" step="0.0000001" name="latitude" placeholder="latitude" value="<?=$updateDatas['latitude']?>" required><br>
+            <input type="number" step="0.0000001" name="longitude" placeholder="longitude" value="<?=$updateDatas['longitude']?>" required><br>
+            <input type="hidden" name="idourdatas" value="<?=$updateDatas['idourdatas']?>">
             <input type="submit" value="Mettre à jour" />
        </form>
         </form>
