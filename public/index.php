@@ -35,7 +35,10 @@ if (isset($_GET["page"])) {
     (isset($_GET["bienvenue"])) {
         include ("../view/private/admin.homepage.html.php");
     
-} else
+}
+else if (isset($_GET["update"])) {
+    include ("../view/private/admin.update.html.php");
+}else
 {
     include ("../view/public/homepage.view.html.php");
 }
