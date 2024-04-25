@@ -6,7 +6,7 @@ if(isset($_GET['disconnect'])){
 
      disconnectAdministrator();
      header("Location: ./");
-include("../model/adminModel.php");
+//include("../model/adminModel.php");
      die();
 
 }
@@ -27,7 +27,7 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
         $latitude = (float) $_POST['latitude'];
         $longitude = (float) $_POST['longitude'];
 
-        $insert = addOurdatas($db,$idgeoloc,$title,$description,$latitude, $longitude);
+        $insert = addOurdatas($db,$idgeoloc,$title,$description,$latitude,$longitude);
 
         if($update===true){
             header("Location: ./");
@@ -37,9 +37,10 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
         }else{
             $errorUpdate = $update;
         }
+        $updateDatas =  updateOurdatasByID($db,$titre,$description,$latitude,$longitude,$idourdatas);
 }
 
-$updateDatas =  updateOurdatasByID($db,$titre,$description,$latitude,$longitude,$idourdatas);
+
 
 include "../view/private/admin.insert.html.php";
 

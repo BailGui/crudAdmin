@@ -19,7 +19,7 @@ header("location: ?connect");
     <h1>Suppression d'un lieu</h1>
     <nav>
         <ul>
-            <li><a href="./">Accueil de l'administration</li>
+            <li><a href="?bienvenue">Accueil de l'administration</li>
             <li><a href="?insert">Ajouter un lieu</a></li>
             <li><a href="?disconnect">Déconnexion</a></li>
         </ul>
