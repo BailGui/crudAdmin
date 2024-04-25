@@ -1,9 +1,9 @@
 <?php
 
-function getAllOurdatas(PDO $db, $order = "DESC"): array|string {
+function getAllOurdatas(PDO $db): array|string {
 
-    //$order = (in_array($order,['DESC','ASC'], true))? $order: "DESC";
-    $sql = "SELECT * FROM ourdatas ORDER BY idourdatas $order;";
+    
+    $sql = "SELECT * FROM ourdatas ORDER BY idourdatas;";
     try{
         $query = $db->query($sql);
         if($query->rowCount()===0) return "Pas encore de datas";
