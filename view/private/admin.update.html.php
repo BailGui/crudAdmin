@@ -33,7 +33,7 @@ header("location: ?connect");
             <textarea name="ourdesc" placeholder="Description" required><?=$updateDatas['ourdesc']?></textarea><br>
             <input type="number" step="0.0000001" name="latitude" placeholder="latitude" value="<?=$updateDatas['latitude']?>" required><br>
             <input type="number" step="0.0000001" name="longitude" placeholder="longitude" value="<?=$updateDatas['longitude']?>" required><br>
-            <input type="hidden" name="idourdatas" value="<?=$updateDatas['idourdatas']?>">
+            
             <input type="submit" value="Mettre à jour" />
        </form>
         </form>
