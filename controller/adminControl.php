@@ -81,7 +81,7 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
 
     $idDelete = (int) $_GET['delete'];
     if(isset($_GET['ok'])){
-        $delete = deleteOneDatasByID($db, $idDelete);
+        $delete = deleteOneDataByID($db, $idDelete);
         if($delete===true){
             header("Location: ./");
             exit();
@@ -92,7 +92,7 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
         }
     }
 
-    $getOneData = getOneDatasByID($db, $idDelete);
+    $getOneData = getOneDataByID($db, $idDelete);
 
 
 }
