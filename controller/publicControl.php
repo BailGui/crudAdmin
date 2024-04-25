@@ -8,7 +8,6 @@ if(isset($_GET['json'])){
     exit();
 }
 
-if(isset($_GET['connect'])){
 
     if(isset($_POST['username'],$_POST['passwd'])){
 
@@ -24,10 +23,7 @@ if(isset($_GET['connect'])){
         }
     }
 
-require "../view/public/connect.view.html.php";
-die();
 
-}
 
+// include "../view/public/homepage.view.html.php";
 $ourDatas = getAllOurdatas($db);
-include "../view/public/homepage.view.html.php";
