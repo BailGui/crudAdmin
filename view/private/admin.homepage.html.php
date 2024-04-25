@@ -55,7 +55,7 @@ header("location: ?connect");
                 <td><?=$item['latitude']?></td>
                 <td><?=$item['longitude']?></td>
                 <td><a href="?update=<?=$item['idourdatas']?>"><img src="img/update.png" width="32" height="32" alt="update" /></a></td>
-                <td><a href="?delete=<?=$item['idourdatas']?>"><img src="img/delete.png" width="32" height="32" alt="delete" /></a></td>
+                <td><a href="?delete=<?=$item['idourdatas']?>"><img src="img/garbage.png" width="52" height="32" alt="delete" /></a></td>
             </tr>
                 <?php endforeach; ?>
             </table>
