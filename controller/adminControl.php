@@ -6,7 +6,6 @@ if(isset($_GET['disconnect'])){
 
      disconnectAdministrator();
      header("Location: ./");
-//include("../model/adminModel.php");
      die();
 
 }

@@ -23,7 +23,4 @@ if(isset($_GET['json'])){
         }
     }
 
-
-
-// include "../view/public/homepage.view.html.php";
 $ourDatas = getAllOurdatas($db);
