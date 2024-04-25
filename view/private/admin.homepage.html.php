@@ -6,7 +6,6 @@ header("location: ?connect");
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +55,7 @@ header("location: ?connect");
                 <td><?=$item['latitude']?></td>
                 <td><?=$item['longitude']?></td>
                 <td><a href="?update=<?=$item['idourdatas']?>"><img src="img/update.png" width="32" height="32" alt="update" /></a></td>
-                <td><img src="img/delete.png" width="32" height="32" alt="delete" /></td>
+                <td><a href="?delete=<?=$item['idourdatas']?>"><img src="img/delete.png" width="32" height="32" alt="delete" /></a></td>
             </tr>
                 <?php endforeach; ?>
             </table>
