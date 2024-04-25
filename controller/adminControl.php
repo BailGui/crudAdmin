@@ -92,7 +92,7 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
         }
     }
 
-    $getOneData = getOneDataByID($db, $idDelete);
+    $getOneData = getOneDatasByID($db, $idDelete);
 
 
 }
