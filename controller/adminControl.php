@@ -1,11 +1,15 @@
 <?php
 
-if(isset($_GET['disconnect']))
+$ourDatas = getAllOurdatas($db); 
+
+if(isset($_GET['disconnect'])){
 
      disconnectAdministrator();
      header("Location: ./");
-include("../model/adminModel.php")
+include("../model/adminModel.php");
      die();
+
+}
 
 if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
 
@@ -93,11 +97,4 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
     $getOneData = getOneDatasByID($db, $idDelete);
 
 
-
-
-$ourDatas = getAllOurdatas($db);
-
-
-require "../view/private/admin.homepage.html.php";
-
-
+}
