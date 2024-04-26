@@ -18,10 +18,8 @@ function getAllOurdatas(PDO $db): array|string {
 
 function getOneOurdatasByID(PDO $db, int $id): array|string 
 {
-    $sql = "SELECT * FROM `ourdatas` WHERE `idourdatas` = :id";
+    $sql = "SELECT * FROM `ourdatas` WHERE `idourdatas` = ?";
     $prepare = $db->prepare($sql);
-
-    $prepare->bindParam("id", $id, PDO::PARAM_INT);
 
     try{
        $prepare->execute([$id]);
