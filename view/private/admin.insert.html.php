@@ -16,13 +16,9 @@ header("location: ?connect");
 </head>
 <body>
     <h1>Admin Insertion</h1>
-    <nav>
-        <ul>
-            <li><a href="?bienvenue">Accueil Admin</a></li>
-            <li><a href="?insert">Ajouter une data</a></li>
-            <li><a href="?disconnect">Déconnexion</a>       
-        </ul>
-    </nav>
+    <?php 
+    include "../view/inc/navAdmin.php";
+    ?>
     <div class="content">
         <h2>Insertion d'une data</h2>
         <?php if(isset($error)): ?>

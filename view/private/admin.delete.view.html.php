@@ -18,7 +18,7 @@ header("location: ?connect");
 <body>
     <h1>Suppression d'un lieu</h1>
     <?php 
-    include "../inc/navAdmin.php";
+    include "../view/inc/navAdmin.php";
     ?>
     <div id="content">
         <h3>Article à supprimer</h3>

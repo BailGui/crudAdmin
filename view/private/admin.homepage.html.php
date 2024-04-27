@@ -16,7 +16,7 @@ header("location: ?connect");
 <body>
     <h1>Admin Homepage</h1>
     <?php 
-    include include "../inc/navAdmin.php";
+    include "../view/inc/navAdmin.php";
     ?>
     <div class="content">
         <h2>Admin de nos datas</h2>
