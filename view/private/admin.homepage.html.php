@@ -15,13 +15,9 @@ header("location: ?connect");
 </head>
 <body>
     <h1>Admin Homepage</h1>
-    <nav>
-        <ul>
-            <li>Accueil de l'administration</li>
-            <li><a href="?insert">Ajouter un lieu</a></li>
-            <li><a href="?disconnect">Déconnexion</a></li>    
-        </ul>
-    </nav>
+    <?php 
+    include include "../inc/navAdmin.php";
+    ?>
     <div class="content">
         <h2>Admin de nos datas</h2>
         <?php if(isset($_GET['404'])): ?>
