@@ -8,13 +8,9 @@
 </head>
 <body>
     <h1>Connexion</h1>
-    <nav>
-        <ul>
-            <li><a href="./">Accueil</a></li>
-            <li><a href="?json" target="_blank">API</a> format JSON</li>
-            <li>Connexion</li>
-        </ul>
-    </nav>
+    <?php 
+    include "../view/inc/navPublic.php";
+    ?>
     <div id="content">
         <h3>Connexion à notre administration</h3>
         <?php if(isset($error)): ?>

@@ -8,13 +8,9 @@
 </head>
 <body>
 <h1>Accueil</h1>
-    <nav>
-        <ul>
-            <li><a href="./">Accueil</a></li>
-            <li><a href="?json" target="_blank">API</a> format JSON</li>
-            <li><a href="?connect">Connexion</a>
-        </ul>
-    </nav>
+<?php 
+    include "../view/inc/navAdmin.php";
+?>
     <div id="content">
         <h3>Liste de nos lieux</h3>
         <?php
