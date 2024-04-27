@@ -11,37 +11,15 @@
 <?php 
     include "../view/inc/navAdmin.php";
 ?>
-    <div id="content">
-        <h3>Liste de nos lieux</h3>
-        <?php
-        
-        if(is_string($ourDatas)):
-        ?>
-            <h3 id="alert"><?=$ourDatas?></h3>
-        <?php
-        
-        elseif(empty($ourDatas)):
-        ?>
-            <h3 id="comment">Pas encore de lieu.</h3>
-        <?php
-        
-        else:
 
-            $nb = count($ourDatas);
-        ?>
-            <h3>Il y a <?=$nb?> <?=$nb>1 ? "lieux" : "lieu"?></h3>
+        <div id="resultat">
+            <div id="map"></div>
+            <div id="liste"></div>
+        </div>
+    
 
-            <?php
-            foreach($ourDatas as $data):
-            ?>
-            <h4><?=$data['title']?></h4>
-            <p><?=$data['ourdesc']?></p>
-            <p><?=$data['latitude']?> | <?=$data['longitude']?></p>
-            <hr>
-        <?php
-            endforeach;
-        endif;
-        ?>   
-    </div>
+    <script src=" https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
+    </script>
+    <script src="../js/carteJSON.js"></script>
 </body>
 </html>
