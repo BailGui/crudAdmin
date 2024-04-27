@@ -1,6 +1,7 @@
+
 <nav class="navbar navbar-expand-lg navbar-secondary fixed-top mask-custom shadow-0">
       <div class="container-fluid mb-5">
-      <a class="navbar-brand" href="?accueil"><span style="color: red;">Guigle</span><span style="color: #fff;">Maps</span></a>
+      <a class="navbar-brand" href="?accueil"><span class="text-warning">Guigle</span><span class="text-primary">Maps</span></a>
       <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
         data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">

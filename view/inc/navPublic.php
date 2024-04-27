@@ -1,7 +1,33 @@
-<nav>
-        <ul>
-            <li><a href="?accueil">Accueil</a></li>
-            <li><a href="?json" target="_blank">API</a> format JSON</li>
-            <li><a href="?connect">Connexion</a>
+<nav class="navbar navbar-expand-lg navbar-secondary fixed-top mask-custom shadow-0">
+      <div class="container-fluid mb-5">
+      <a class="navbar-brand" href="?accueil"><span class="text-warning">Guigle</span><span class="text-primary">Maps</span></a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-sm-center" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto">
+                      <li class="nav-item">
+                      <a class="nav-link" href="?accueil">WELCOME</a></li>
+                      <li class="nav-item">
+                      <a class="nav-link" href="?json" target="_blank">API</a></li>
+                      <li class="nav-item">
+                      <a class="nav-link" href="?connect">LOGIN</a></li>
+            </ul>
+                <ul class="navbar-nav d-flex flex-row">
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="bi bi-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
         </ul>
-</nav>
+          </div>
+      </div>
+  </nav>
