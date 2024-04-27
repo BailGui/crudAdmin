@@ -21,8 +21,8 @@ require_once "../controller/adminControl.php";
 
 if (isset($_GET["page"])) {
     switch ($_GET["page"]) {
-        case "bienvenue" :
-            include ("../view/private/admin.homepage.html.php");
+        case "accueil" :
+            include ("../view/public/homepage.view.html.php");
             break;
     
  

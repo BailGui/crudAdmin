@@ -10,7 +10,7 @@
 <body>
 <h1>Accueil</h1>
 <?php 
-    include "../view/inc/navAdmin.php";
+    include "../view/inc/navPublic.php";
 ?>
 
         <div id="resultat">
