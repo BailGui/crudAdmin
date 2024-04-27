@@ -24,7 +24,7 @@ fetch("apicarte.php")
         for (let item in liste) {
 
             let unMarqueur = L.marker([liste[item].latitude, liste[item].longitude]).addTo(map);
-            unMarqueur.bindPopup(`<h3>${liste[item].title}</h3> <p>${liste[item].geolocdesc}</p>`);
+            unMarqueur.bindPopup(`<h3>${liste[item].title}</h3> <p>${liste[item].ourdesc}</p>`);
             markerTable.push(unMarqueur);
 
         }
