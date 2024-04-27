@@ -5,7 +5,6 @@ $ourDatas = getAllOurdatas($db);
 if(isset($_GET['disconnect'])){
 
      disconnectAdministrator();
-     header("Location: ./");
      die();
 
 }

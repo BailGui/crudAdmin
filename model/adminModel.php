@@ -41,6 +41,6 @@ function disconnectAdministrator(): bool
 
     session_destroy();
 
-    header("Location: ./");
+    header("Location: ?connect");
     die();
 }
