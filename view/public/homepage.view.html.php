@@ -51,13 +51,13 @@
 </div>
 
 
-<?php 
-    include "../view/inc/footer.php";
-?>
-
 
 </main>
 
+
+<?php 
+    include "../view/inc/footer.php";
+?>
 
 
 
