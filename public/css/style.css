@@ -56,7 +56,14 @@ span{
 }
 
 
-@media screen and{
-    
+@media screen and (width <= 576px) {
+    #resultat{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+                "map"
+                "liste";
+    }
+    #map{
+        margin-bottom: 1rem;
+    }
 }
-

@@ -25,7 +25,7 @@
             <div class="col p-5">
         <h1 class="text-center">Connect to Admin.</h1>
         <?php if(isset($error)): ?>
-            <h4 id="alert"><?=$error?></h4>
+            <h4 class="text-center text-danger"id="alert"><?=$error?></h4>
         <?php endif ?> 
         </div>
         </div>
