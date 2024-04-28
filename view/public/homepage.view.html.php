@@ -22,43 +22,22 @@
 </header>
 <div class="container">
 <div class="rounded-3" id="titleHome">
-        <h1 id="welcome"><span class="text-primary">G</span><span class="text-danger">u</span><span class="text-warning">i</span><span class="text-primary">g</span><span class="text-success">l</span><span class="text-danger">e</span></h1>
+        <h1 id="welcome"><span class="gui text-primary">G</span><span class="gui text-danger">u</span><span class="gui text-warning">i</span><span class="gui text-primary">g</span><span class="gui text-success">l</span><span class="gui text-danger">e</span></h1>
 </div>
 
-<main>
-            
+<main>            
 <div id="resultat">
     <div class="rounded-3" id="map"></div>
     <div id="liste"></div>
 </div>
-<nav aria-label="liste">
-  <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" href="liste" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li class="page-item"><a class="page-link" href="liste">1</a></li>
-    <li class="page-item"><a class="page-link" href="liste">2</a></li>
-    <li class="page-item"><a class="page-link" href="liste">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="liste" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+</main>
 </div>
 
-
-
-</main>
-
-
+<div class="pt-5">
 <?php 
     include "../view/inc/footer.php";
 ?>
-
+</div>
 
 
     <script src=" https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
