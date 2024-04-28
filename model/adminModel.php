@@ -1,6 +1,6 @@
 <?php
 
-function connectAdministrator(PDO $db, string $user, string $password) : bool|string 
+function connectAdministrator(PDO $db, string $user, string $password): bool|string
 {
     $sql="SELECT * FROM `administrator` WHERE `username` = ?";
 
