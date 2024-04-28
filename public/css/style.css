@@ -8,11 +8,23 @@
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin: 5% 0% 0% 0%;
+    grid-template-areas: 
+            "map liste";
 }
 
 #liste {
     font-family: monospace;
     font-size: small;
+    overflow-y: scroll;
+    max-height: 500px;
+}
+
+#liste ul li:nth-child(odd){
+    background-color: rgba(50,50,50,0.2);
+}
+
+#liste ul li:hover{
+    background-color: rgba(0,255,0,0.3);
 }
 
 h1 {
