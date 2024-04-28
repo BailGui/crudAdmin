@@ -30,6 +30,23 @@
     <div id="map"></div>
     <div id="liste"></div>
 </div>
+<nav aria-label="liste">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="liste" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="liste">1</a></li>
+    <li class="page-item"><a class="page-link" href="liste">2</a></li>
+    <li class="page-item"><a class="page-link" href="liste">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="liste" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 
 
 <?php 

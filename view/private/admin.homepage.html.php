@@ -50,13 +50,13 @@ include "../view/inc/connect.php";
             <table class="table table-bordered" data-toggle="table" data-show-columns="true" data-search="false" data-pagination="true" data-checkbox-header="true">
             <thead class="">
             <tr>
-            <th class="bg-light" data-checkbox="true" data-click-to-select="true">ID</th>
+            <th class="bg-secondary" data-checkbox="true" data-click-to-select="true">ID</th>
                 <th class="text-center bg-light">PLACE</th>
-                <th class="text-center bg-light">ADRESS</th>
+                <th class="text-center text-white bg-secondary">ADRESS</th>
                 <th class="text-center bg-light">LAT</th>
-                <th class="text-center bg-light">LONG</th>
+                <th class="text-center text-white bg-secondary">LONG</th>
                 <th class="text-center bg-light">UPDATE</th>
-                <th class="text-center bg-light">DELETE</th>
+                <th class="text-center text-white bg-secondary">DELETE</th>
             </tr>
             </thead>
             <tbody>
