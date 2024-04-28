@@ -44,7 +44,7 @@ include "../view/inc/connect.php";
                             </div>
                         </div>
                         <div class="row">
-                        <div class="mb-2" id="map"></div>
+                        <div class="mb-2 rounded-3" id="map"></div>
                         </div>
                             </div>
                     </div>      

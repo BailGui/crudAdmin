@@ -20,14 +20,15 @@
         </div>
         </div>
 </header>
-<div id="titleHome">
-        <h1 id="welcome">WELCOME</h1>
+<div class="container">
+<div class="rounded-3" id="titleHome">
+        <h1 id="welcome"><span class="text-primary">G</span><span class="text-danger">u</span><span class="text-warning">i</span><span class="text-primary">g</span><span class="text-success">l</span><span class="text-danger">e</span></h1>
 </div>
 
 <main>
             
 <div id="resultat">
-    <div id="map"></div>
+    <div class="rounded-3" id="map"></div>
     <div id="liste"></div>
 </div>
 <nav aria-label="liste">
@@ -47,6 +48,7 @@
     </li>
   </ul>
 </nav>
+</div>
 
 
 <?php 
@@ -55,6 +57,7 @@
 
 
 </main>
+
 
 
 
