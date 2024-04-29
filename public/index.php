@@ -24,21 +24,29 @@ if (isset($_GET["page"])) {
         case "accueil" :
             include ("../view/public/homepage.view.html.php");
             break;
-    
- 
     }
     
 }else if (isset($_GET["connect"])) {
-    include ("../view/public/connect.view.html.php");
+      include ("../view/public/connect.view.html.php");
    
 }else if 
     (isset($_GET["bienvenue"])) {
-        include ("../view/private/admin.homepage.html.php");
+     include ("../view/private/admin.homepage.html.php");
     
-}
-else if (isset($_GET["update"])) {
+}else if (isset($_GET["update"])) {
     include ("../view/private/admin.update.html.php");
-}else
+
+}else if 
+     (isset($_GET['delete'])) {
+   include ("admin.delete.view.html");
+
+}else if 
+(isset($_GET['delete'])) {
+include ("admin.delete.view.html");
+
+}else if
+
+
 {
     include ("../view/public/homepage.view.html.php");
 }
