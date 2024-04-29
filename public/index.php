@@ -26,11 +26,11 @@ if (isset($_GET["page"])) {
             break;
     }
     
-}else if (isset($_GET["connect"])) {
+}else if      (isset($_GET["connect"])) {
       include ("../view/public/connect.view.html.php");
    
 }else if 
-    (isset($_GET["bienvenue"])) {
+           (isset($_GET["bienvenue"])) {
      include ("../view/private/admin.homepage.html.php");
     
 }else if (isset($_GET["update"])) {
@@ -41,8 +41,8 @@ if (isset($_GET["page"])) {
    include ("admin.delete.view.html");
 
 }else if 
-(isset($_GET['delete'])) {
-include ("admin.delete.view.html");
+   (isset($_GET['insert'])) {
+  include ("admin.insert.view.html");
 
 }else if
 
