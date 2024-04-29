@@ -38,16 +38,14 @@ if (isset($_GET["page"])) {
 
 }else if 
      (isset($_GET['delete'])) {
-   include ("admin.delete.view.html");
+   include ("../view/private/admin.delete.view.html");
 
 }else if 
    (isset($_GET['insert'])) {
-  include ("admin.insert.view.html");
+  include ("../view/private/admin.insert.view.html");
 
-}else if
+}else{
 
-
-{
     include ("../view/public/homepage.view.html.php");
 }
 
