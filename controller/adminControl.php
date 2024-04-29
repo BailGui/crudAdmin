@@ -92,8 +92,9 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
 
     $getOneData = getOneOurdatasByID($db, $idDelete);
 
-    include "../view/admin/admin.delete.view.html.php";
-    exit();
+    include "../view/private/admin.delete.view.html.php";
+    
+    die();
 
 }
 

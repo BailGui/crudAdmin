@@ -41,7 +41,7 @@ include "../view/inc/connect.php";
         else :
             ?>
                 <h5 class="text-center mt-5 mb-3">Titre : <span class="fw-normal"> <?= $getOneData['title'] ?></span></h5>
-                <h5 class="text-center mb-3">Description : <span class="fw-normal"><?= $getOneData['description'] ?></span></h5>
+                <h5 class="text-center mb-3">Description : <span class="fw-normal"><?= $getOneData['ourdesc'] ?></span></h5>
                 <h5 class="text-center mb-3">Latitude : <span class="fw-normal"><?= $getOneData['latitude'] ?></span></h5>
                 <h5 class="text-center mb-3">Longitude : <span class="fw-normal"><?= $getOneData['longitude'] ?></span></h5>
                 <p class="text-center mt-2 fw-bold">Voulez-vous vraiment supprimer ce lieu ?</p>
