@@ -77,7 +77,7 @@ if(isset($_GET['insert'])){
 if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
     $idDelete = (int) $_GET['delete'];
     
-
+    if (isset($_GET['ok'])) { 
         $delete = deleteOneDataByID($db, $idDelete);
         if($delete===true){
             header("Location: ?bienvenue");
@@ -89,5 +89,12 @@ if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
         }
     }
 
+
+    $getOneData = etOneOurdatasByID($db, $idDelete);
+
+    include "../view/admin/admin.delete.view.html.php";
+    exit();
+
+}
 
 
